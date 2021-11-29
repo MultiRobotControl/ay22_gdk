@@ -4,3 +4,4 @@ Contributors:
 
 * Brian Bingham
 * Kia Min Phua
+* Keegan Delanoy
