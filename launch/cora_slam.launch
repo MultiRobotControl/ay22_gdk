@@ -25,6 +25,11 @@
           args="-d $(find ay22_gdk)/rviz/cora_$(arg slam_methods).rviz"/>
   </group>
           args="-d $(find ay22_gdk)/config/cora1.rviz"/>
+    
   </group>
   
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan" required="true">
+    <remap from="cloud_in" to="/cora1/cora/sensors/lidars/lidar/points"/>
+  </node>
+    
 </launch>
