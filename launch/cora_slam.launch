@@ -9,13 +9,13 @@
     <param name="base_frame" value="base_footprint"/>
     <param name="odom_frame" value="world"/>
     <param name="map_frame"  value="map"/>
-    <rosparam command="load" file="$(find cora_slam)/config/gmapping_params.yaml" />
+    <rosparam command="load" file="$(find ay22_gdk)/config/gmapping_params.yaml" />
   </node>
 
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find cora_slam)/config/cora1.rviz"/>
+          args="-d $(find ay22_gdk)/config/cora1.rviz"/>
   </group>
   
 </launch>
