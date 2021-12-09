@@ -16,6 +16,11 @@
   <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find ay22_gdk)/config/cora1.rviz"/>
+    
   </group>
   
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan" required="true">
+    <remap from="cloud_in" to="/cora1/cora/sensors/lidars/lidar/points"/>
+  </node>
+    
 </launch>
