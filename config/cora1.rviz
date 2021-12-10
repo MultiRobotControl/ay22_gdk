@@ -7,12 +7,10 @@ Panels:
         - /Global Options1
         - /Status1
         - /Grid1
-        - /RobotModel1/Status1
         - /RobotModel1/Links1
-        - /PointCloud21
-        - /PointCloud21/Status1
+        - /LaserScan1
       Splitter Ratio: 0.5
-    Tree Height: 604
+    Tree Height: 247
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -55,7 +53,7 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 100
-      Reference Frame: <Fixed Frame>
+      Reference Frame: map
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
@@ -67,15 +65,10 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_stabilized:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         cora1/cora/base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         cora1/cora/dummy_link:
           Alpha: 1
           Show Axes: false
@@ -121,10 +114,36 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_footprint:
+          Value: true
+        base_stabilized:
+          Value: true
+        cora1/cora/base_link:
+          Value: true
+        cora1/cora/dummy_link:
+          Value: true
+        cora1/cora/left_engine_link:
+          Value: true
+        cora1/cora/left_propeller_link:
+          Value: true
+        cora1/cora/lidar_link:
+          Value: true
+        cora1/cora/lidar_post_arm_link:
+          Value: true
+        cora1/cora/lidar_post_link:
+          Value: true
+        cora1/cora/right_engine_link:
+          Value: true
+        cora1/cora/right_propeller_link:
+          Value: true
+        map:
+          Value: true
+        world:
+          Value: true
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -132,14 +151,30 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        map:
+          world:
+            base_footprint:
+              base_stabilized:
+                cora1/cora/base_link:
+                  cora1/cora/dummy_link:
+                    {}
+                  cora1/cora/left_engine_link:
+                    cora1/cora/left_propeller_link:
+                      {}
+                  cora1/cora/lidar_post_link:
+                    cora1/cora/lidar_post_arm_link:
+                      cora1/cora/lidar_link:
+                        {}
+                  cora1/cora/right_engine_link:
+                    cora1/cora/right_propeller_link:
+                      {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
+        Max Value: 4.933955192565918
+        Min Value: -0.016838550567626953
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -164,7 +199,7 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Class: rviz/Image
-      Enabled: true
+      Enabled: false
       Image Topic: /raspicam_node/image
       Max Value: 1
       Median window: 5
@@ -175,7 +210,7 @@ Visualization Manager:
       Transport Hint: compressed
       Unreliable: false
       Value: false
-    - Alpha: 0.699999988
+    - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: false
@@ -185,11 +220,39 @@ Visualization Manager:
       Unreliable: false
       Use Timestamp: false
       Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.029999999329447746
+      Style: Flat Squares
+      Topic: /scan
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: cora1/cora/dummy_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -212,34 +275,30 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/Orbit
-      Distance: 342.7313232421875
+      Angle: 1.1750000715255737
+      Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Field of View: 0.7853981852531433
-      Focal Point:
-        X: -28.897642135620117
-        Y: -9.767578125
-        Z: 13.797316551208496
-      Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.434797465801239
+      Scale: 1.1210761070251465
       Target Frame: <Fixed Frame>
-      Yaw: 1.7004024982452393
+      X: 1.361188292503357
+      Y: -294.10113525390625
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 895
+  Height: 547
   Hide Left Dock: false
-  Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000420000002e5fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b000002e5000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002e5fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003b000002e5000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000083c0000003efc0100000002fb0000000800540069006d006501000000000000083c0000024400fffffffb0000000800540069006d0065010000000000000450000000000000000000000301000002e500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Hide Right Dock: true
+  Image:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd00000004000000000000015600000183fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003e00000183000000ca00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d006100670065000000019d000000790000001600ffffff000000010000010000000121fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003e00000121000000a600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004e20000003efc0100000002fb0000000800540069006d00650100000000000004e2000002b900fffffffb0000000800540069006d00650100000000000004500000000000000000000003860000018300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -247,7 +306,7 @@ Window Geometry:
   Tool Properties:
     collapsed: false
   Views:
-    collapsed: false
-  Width: 2108
-  X: 60
-  Y: 27
+    collapsed: true
+  Width: 1250
+  X: 430
+  Y: -20
