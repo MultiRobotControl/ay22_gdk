@@ -67,10 +67,6 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_stabilized:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         cora1/cora/base_link:
           Alpha: 1
           Show Axes: false
